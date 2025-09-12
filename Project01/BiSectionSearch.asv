@@ -1,0 +1,27 @@
+function func = x^5 + 20 * cos(x) + 20 * x^4 - 19;
+
+
+function roots = BiSectionSearch( xStart, xStop, xStep, xOverlap, Function)
+%
+% Function that uses bisection to search for the roots of f(x)
+% Inputs: xStart and xStep - the end points of the search.
+% xStep – the size of interval used in search.
+% xOverlap – the overlap between intervals.
+% Function – the function to be searched.
+% Outputs: roots - array of roots found in the search.
+%
+
+
+% INTERVAL 1
+x0 = xStart;
+x1 = x0 + xStep;
+
+%run the first Bisection Search.
+x = BiSection(x0, x1, Function);
+
+while(x ~= 0 && x1 <= xStop) % while we do not have a root...
+    x0 = x1 - xOverlap;
+    x1 = x0 + xStep;
+    x = BiSection(x0, x1, Function);
+    plot(x, 0)
+end

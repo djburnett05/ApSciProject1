@@ -1,0 +1,1 @@
+Q1b_Roots = BiSectionSearch(-10, 10, 0.5, 0.25, @(x)x^5 + 20 * cos(x) + 20 * x^4 - 19)
